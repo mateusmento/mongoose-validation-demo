@@ -1,0 +1,20 @@
+{
+  "name": "mongoose-validation-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node --presets es2015 app.js"
+  },
+  "author": "me",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "mongoose": "^5.2.5",
+    "mongoose-unique-validator": "^2.0.1",
+    "mongoose-validator": "^2.0.2",
+    "validator.js": "^2.0.3"
+  }
+}
