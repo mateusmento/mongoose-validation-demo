@@ -12,16 +12,6 @@ const schema = mongoose.Schema({
             validator: value => validator.isEmail(value), 
             message: 'Path `{PATH}` is not an valid email.'
         },
-        {
-            isAsync: true,
-            validator: function(value, done) {
-                this.model('CustomValidation').estimatedDocumentCount({username: value}, function(err, count) {
-                    if (err) done(err);
-                    else if (done) done(count === 0);
-                });
-            }, 
-            message: 'Path `{PATH}` is not unique.'
-        }
     ]},
 
     username: {type: String, required: 'Username is required', validate: {

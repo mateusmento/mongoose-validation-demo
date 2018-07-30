@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import SimpleValidation from './simple-validation.js';
 import {CustomValidation} from './custom-validation.js';
+import User from './user.model';
 
 
 export default function()
@@ -49,23 +50,41 @@ export default function()
         }
     }
     
-    // This sould print 'all good'
-    valid1.save(err => {
-        handleErrors(err);
+    // // This sould print 'all good'
+    // valid1.save(err => {
+    //     handleErrors(err);
 
-        // This should print all errors except for the unique constraint
-        valid2.save(err => {
-            handleErrors(err);
+    //     // This should print all errors except for the unique constraint
+    //     valid2.save(err => {
+    //         handleErrors(err);
 
-            // This sould print 'all good'
-            custom1.save(err => {
-                handleErrors(err);
+    //         // This sould print 'all good'
+    //         custom1.save(err => {
+    //             handleErrors(err);
 
-                // This should print all errors except for the unique constraint
-                custom2.save(handleErrors);
-            })
-        });
+    //             // This should print all errors except for the unique constraint
+    //             custom2.save(handleErrors);
+    //         })
+    //     });
+    // });
+
+    let user1 = new User({
+        username: undefined,
+        password: '',
+        email: 'mateusmentogmail.com',
+        name: '',
     });
 
-    
+    let user2 = new User({
+        username: 'mateusmento',
+        password: 'asmp32hj26',
+        email: 'mateusmentogmail.com',
+        name: 'Mateus Sarmento',
+    });
+
+    user1.save(err => {
+        handleErrors(err);
+        user2.save(handleErrors);
+    });
+
 }
