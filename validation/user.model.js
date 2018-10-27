@@ -5,10 +5,10 @@ import validators from './validators.js';
 
 
 let schema = new mongoose.Schema({
-    username:   {type: String, validate: validation.Username},
-    password:   {type: String, validate: validation.Password},
-    name:       {type: String, validate: validation.Name},
-    email:      {type: String, validate: validation.Email},
+    username:   {type: String, required: true validate: validation.username},
+    password:   {type: String, required: true validate: validation.password},
+    name:       {type: String, required: true validate: validation.name},
+    email:      {type: String, required: true validate: validation.email},
 });
 
 mongoose.Error.messages.general.required = "Path '{PATH}' is required.";

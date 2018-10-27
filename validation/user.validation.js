@@ -1,7 +1,7 @@
 import validator from 'validator';
 import validators from './validators.js';
 
-exports.Username = [
+exports.username = [
     validators.isUnique('username'),
     validators.isNotEmpty(),
     validators.isMaxLength(30),
@@ -13,18 +13,18 @@ exports.Username = [
     },
 ];
 
-exports.Password = [
+exports.password = [
     validators.isMinLength(8),
     validators.isMaxLength(30)
 ];
 
-exports.Email = [
+exports.email = [
     validators.isUnique('email'),
     validators.isEmail(),
     validators.isNotEmpty(),
     validators.isMaxLength(100)
 ];
 
-exports.Name = [
+exports.name = [
     validators.isNotEmpty()
 ];
